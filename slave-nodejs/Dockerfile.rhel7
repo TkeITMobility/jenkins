@@ -22,7 +22,10 @@ ENV NODEJS_VERSION=4.4 \
 COPY contrib/bin/scl_enable /usr/local/bin/scl_enable
 
 # Install NodeJS
-RUN yum-config-manager --enable rhel-server-rhscl-7-rpms && \    
+RUN yum repolist --disablerepo=* && \
+    yum clean all && \
+    yum-config-manager --disable rhel* 1>/dev/null && \
+    yum-config-manager --enable rhel-server-rhscl-7-rpms && \    
     yum-config-manager --enable rhel-7-server-optional-rpms && \
     yum-config-manager --disable epel >/dev/null || : && \
     INSTALL_PKGS="rh-nodejs4 rh-nodejs4-nodejs-nodemon" && \
