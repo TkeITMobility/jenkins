@@ -4,7 +4,11 @@
 # will use for the auto-discovery of this slave.
 #
 
+echo "DEBUG log 1"
+
 source /usr/local/bin/generate_container_user
+
+echo "DEBUG log 2"
 
 #get the fully qualified paths to both 32 and 64 bit java
 JVMPath32bit=`alternatives --display java | grep family | grep i386 | awk '{print $1}'`
