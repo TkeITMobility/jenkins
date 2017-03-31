@@ -1,4 +1,4 @@
-FROM openshift/jenkins-slave-base-rhel7
+FROM openshift/jenkins-slave-base-rhel7b
 
 MAINTAINER Ben Parees <bparees@redhat.com>
 
