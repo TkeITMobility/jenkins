@@ -21,6 +21,8 @@ ENV NODEJS_VERSION=6.11.3 \
 
 COPY contrib/bin/scl_enable /usr/local/bin/scl_enable
 
+curl https://letsencrypt.org/certs/isrgrootx1.pem -o /etc/pki/ca-trust/source/anchors/isrgrootx1.pem && sudo update-ca-trust
+
 # Install NodeJS
 RUN yum repolist --disablerepo=* && \
     yum clean all && \
